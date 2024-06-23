@@ -49,14 +49,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/api/websites/1/posts",
+					"raw": "{{base_url}}/api/websites/{{website_id}}/posts",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
 						"websites",
-						"1",
+						"{{website_id}}",
 						"posts"
 					]
 				}
@@ -78,30 +78,15 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/api/websites/1/subscribe",
+					"raw": "{{base_url}}/api/websites/{{website_id}}/subscribe",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
 						"websites",
-						"1",
+						"{{website_id}}",
 						"subscribe"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Send Emails to Subscribers",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "/api/send-emails",
-					"path": [
-						"api",
-						"send-emails"
 					]
 				}
 			},
@@ -112,6 +97,10 @@
 		{
 			"key": "base_url",
 			"value": "http://0.0.0.0:8000"
+		},
+		{
+			"key": "website_id",
+			"value": "1"
 		}
 	]
 }
