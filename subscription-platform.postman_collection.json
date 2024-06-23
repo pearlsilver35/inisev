@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "5869dd91-da49-4c4c-bcd6-b446d1fdd4bf",
+		"name": "subscription-platform",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8659329",
+		"_collection_link": "https://red-flare-203105.postman.co/workspace/My-Workspace~3a771730-06a4-4a51-82cf-28c35e996c12/collection/8659329-5869dd91-da49-4c4c-bcd6-b446d1fdd4bf?action=share&source=collection_link&creator=8659329"
+	},
+	"item": [
+		{
+			"name": "create website",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Tech News\",\r\n  \"description\": \"Latest updates in technology.\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/websites",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"websites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Post for a Particular Website",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"remarkable developments by Abi\",\r\n  \"description\": \"A new age is set, as dev discovers alien life.\",\r\n  \"published_at\": \"2024-06-23T10:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/websites/1/posts",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"websites",
+						"1",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscribe to a Website",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"ayodele@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/websites/1/subscribe",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"websites",
+						"1",
+						"subscribe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Emails to Subscribers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "/api/send-emails",
+					"path": [
+						"api",
+						"send-emails"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://0.0.0.0:8000"
+		}
+	]
+}
