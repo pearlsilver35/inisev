@@ -6,6 +6,7 @@
 
    ```bash
    git clone https://github.com/pearlsilver35/inisev.git
+   .env-example should have all needed configurations
 
    ```
 
@@ -20,7 +21,7 @@ The Laravel project starts automatically within Docker Compose.
 After it's up and running, execute the following command to migrate the database and seed it:       
 
     ```bash
-        docker-compose exec subscription-platform php artisan migrate --seed
+        docker-compose exec app php artisan migrate --seed
     ```
 4. **Testing**
 Postman is included in the root folder. 
@@ -28,6 +29,6 @@ Import the collection and update the base URL to match your local environment.
 Additionally, to run the queue, execute the following commands in separate terminals:
 
     ```bash
-        docker-compose exec subscription-platform php artisan queue:work
-        docker-compose exec subscription-platform php artisan posts:notify
+        docker-compose exec app php artisan queue:work
+        docker-compose exec app php artisan posts:notify
     ```
